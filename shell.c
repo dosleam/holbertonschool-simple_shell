@@ -4,12 +4,14 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
+
 int main(void)
 {
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
     pid_t child_pid;
+
     int status;
     int i = 0;
     char **args;
@@ -36,6 +38,7 @@ int main(void)
             args[i] = NULL;
 
             child_pid = fork();/*crée process*/
+            /* free parent ? */
             if (child_pid < 0)
             {
                 exit(100);
