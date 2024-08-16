@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/wait.h>
+#include <string.h>
 int main(int argc, char *argv[])
 {
     char *line = NULL;
@@ -18,13 +19,15 @@ int main(int argc, char *argv[])
     while(1)/* affiche #cisfun*/
     {
         printf("#cisfun$ ");
+        i = 0;
         if ((read = getline(&line, &len, stdin)) != -1) /*lit le flux*/
         {
-            args[i] = strtok(line, " \n"); /* decoupe le flux*/
+            token = strtok(line, " \n"); /* decoupe le flux*/
             while (token != NULL)
             {
-                args[i] = strtok(NULL, " \n");
+                args[i] = token;
                 i++;
+                token = strtok(NULL, " \n");
             }
             args[i] = NULL;
 
@@ -35,17 +38,16 @@ int main(int argc, char *argv[])
             }
             if (child_pid == 0)
             {
-            if (execve(args[1], args, env) == -1)/*execute*/
+            if (execve(args[0], args, env) == -1)/*execute*/
             {
                 perror("execve");
                     exit(1);
-            } else
-            {
-                wait(&status);
             }
+            wait(&status);
         }
-            free(line);
-            line = NULL;
-            len = 0;
+        free(line);
+        line = NULL;
+        len = 0;
     }
+}
 }
