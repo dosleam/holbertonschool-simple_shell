@@ -12,16 +12,18 @@ int main(void)
     pid_t child_pid;
     int status;
     int i = 0;
-    char *args[100];
+    char **args;
     char *env[] = {NULL};
     char *token;
 
+    args = malloc(i * sizeof(char *));
     while(1)/* affiche #cisfun*/
     {
         write(STDOUT_FILENO, "#cisfun$ ", 9);
         i = 0;
         line = NULL;
         len = 0;
+
         if ((read = getline(&line, &len, stdin)) != -1) /*lit le flux*/
         {
             token = strtok(line, " \n"); /* decoupe le flux*/
@@ -46,7 +48,7 @@ int main(void)
             {
                 if (execve(args[0], args, env) == -1)/*execute*/
                 {
-                    perror("execve");
+                    perror("./shell");
                     exit(1);
                 }
             }
