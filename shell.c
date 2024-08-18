@@ -4,6 +4,23 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
+#include "main.h"
+
+void free_array(char **tab)
+{
+    int i, len_tab;
+
+    while (*tab)
+    {
+        len_tab++;
+    }
+
+    for (i = 0; i <= len_tab; i++)
+    {
+        free(tab[i]);
+    }
+}
+
 
 int main(void)
 {
@@ -15,10 +32,11 @@ int main(void)
     int status;
     int i = 0;
     char **args;
-    char *env[] = {NULL};
+    char *env[] = {"PATH=/bin", NULL};
     char *token;
 
     args = malloc(i * sizeof(char *));
+    /* probleme d'allocation*/
     while(1)/* affiche #cisfun*/
     {
         write(STDOUT_FILENO, "#cisfun$ ", 9);
