@@ -21,6 +21,72 @@ void free_array(char **tab)
     }
 }
 
+char** cut_path(char **tab)
+{
+    char *path;
+    int i;
+    char *token;
+
+    path = getenv("PATH");
+
+    if (path == NULL)
+    {
+        return (NULL);
+    }
+
+    token = strtok(path, ":"); /* decoupe le path*/
+    i = 0;
+    while (token != NULL)
+    {
+        tab[i] = token;
+        i++;
+        token = strtok(NULL, ":");
+    }
+    tab[i] = NULL;
+    return (tab);
+}
+
+void sortie_fonction(char *mot)
+{
+    if (strcmp(mot, "exit") == 0 ||strcmp(mot, "^C") == 0)/* check si exit a été tapé ou ctrl c*/
+        {
+            exit(3);
+        }
+}
+
+extern char **environ;
+
+void print_env(char *mot)
+{
+    int i;
+
+    i = 0;
+    if (strcmp(mot, "env") == 0)
+    {
+        while (environ[i] != NULL)
+        {
+            printf("%s\n", *environ);
+            i++;
+        }
+    }
+
+}
+
+void _strtok(char **array, char *ligne)
+{
+    char *token;
+    int i;
+
+    token = strtok(ligne, " \n"); /* decoupe le flux*/
+    i = 0;
+    while (token != NULL)
+    {
+        array[i] = token;
+        i++;
+        token = strtok(NULL, " \n");
+    }
+    array[i] = NULL;
+}
 
 int main(void)
 {
@@ -32,8 +98,7 @@ int main(void)
     int status;
     int i = 0;
     char **args;
-    char *env[] = {"PATH=/bin", NULL};
-    char *token;
+    char *env[64];
 
     args = malloc(i * sizeof(char *));
     /* probleme d'allocation*/
@@ -46,14 +111,7 @@ int main(void)
 
         if ((read = getline(&line, &len, stdin)) != -1) /*lit le flux*/
         {
-            token = strtok(line, " \n"); /* decoupe le flux*/
-            while (token != NULL)
-            {
-                args[i] = token;
-                i++;
-                token = strtok(NULL, " \n");
-            }
-            args[i] = NULL;
+            _strtok(args, line);
 
             child_pid = fork();/*crée process*/
             /* free parent ? */
@@ -61,10 +119,12 @@ int main(void)
             {
                 exit(100);
             }
-            if (strcmp(args[0], "exit") == 0 ||strcmp(args[0], "^C") == 0)/* check si exit a été tapé ou ctrl c*/
-            {
-                exit(3);
-            }
+
+            sortie_fonction(args[0]);
+            print_env(args[0]);
+
+            cut_path(env);
+
             if (child_pid == 0)
             {
                 if (execve(args[0], args, env) == -1)/*execute*/
