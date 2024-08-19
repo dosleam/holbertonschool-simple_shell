@@ -11,9 +11,9 @@ int main(int argc __attribute__((unused)),
 	char **args;
 
 	args = malloc(i * sizeof(char *));
-	/* probleme d'allocation*/
 	while (1)/* affiche #cisfun en attendant une commande*/
 	{
+		/* probleme d'allocation*/		
 		write(STDOUT_FILENO, "#cisfun$ ", 9);
 		i = 0;
 		line = NULL;
@@ -46,9 +46,10 @@ int main(int argc __attribute__((unused)),
 			wait(&status);
 		}
 		free(line);
-		free_array(args);
 		line = NULL;
 		len = 0;
+
 	}
+	free_array(args);
 	return (1);
 }
