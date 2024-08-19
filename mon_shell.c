@@ -23,7 +23,7 @@ int main(int argc __attribute__((unused)),
 		if (read != -1) /*lit le flux*/
 		{
 			_strtok(args, line);
-			sortie_fonction(args[0]);
+			fonction_de_sortie(args[0]);
 			result_print_env = print_env(args[0], envp);
 			cut_path(env);
 
@@ -46,9 +46,9 @@ int main(int argc __attribute__((unused)),
 			wait(&status);
 		}
 		free(line);
-		free(args);
+		free_array(args);
 		line = NULL;
 		len = 0;
 	}
-	return (0);
+	return (1);
 }

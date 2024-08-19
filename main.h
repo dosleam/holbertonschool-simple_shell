@@ -10,7 +10,7 @@
 
 void free_array(char **tab);
 char** cut_path(char **tableau);
-void sortie_fonction(char *mot);
+void fonction_de_sortie(char *mot);
 void _strtok(char **array, char *ligne);
 int print_env(char *mot, char ** environnement);
 #endif

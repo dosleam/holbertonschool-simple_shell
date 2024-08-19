@@ -49,12 +49,12 @@ char **cut_path(char **tab)
 	return (tab);
 }
 /**
-* sortie_fonction - fonction
+* fonction_de_sortie - fonction
 * Fonction qui sort de la boucle prompt
 * si exit ou ^C a été tapé
 * @mot: entrée de l'utilisateur
 */
-void sortie_fonction(char *mot)
+void fonction_de_sortie(char *mot)
 {
 	if ((strcmp(mot, "exit") == 0) || (strcmp(mot, "^C") == 0))
 	{
