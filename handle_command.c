@@ -27,7 +27,7 @@ void handle_command(char **args)
 	{
 		char **env = environ;
 
-		while (*env != NULL)
+		while (*env)
 		{
 			printf("%s\n", *env);
 			env++;
