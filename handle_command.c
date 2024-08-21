@@ -19,10 +19,22 @@ void handle_command(char **args)
 	else if (strcmp(args[0], "cd") == 0)
 	{
 		if (args[1])
-		chdir(args[1]);
+		{
+			chdir(args[1]);
+		}
+	}
+	else if (strcmp(args[0], "env") == 0)
+	{
+		char **env = environ;
+
+		while (*env != NULL)
+		{
+			printf("%s\n", *env);
+			env++;
+		}
 	}
 	else
 	{
-	execute_command(args);
+		execute_command(args);
 	}
 }
