@@ -1,0 +1,33 @@
+NAME
+    ./hsh
+	Open a simple UNIX command interpreter.
+DESCRIPTION
+    A simple UNIX command interpreter is a minimalist program designed to read commands entered by a user, interpret them, and then execute them. 
+    This type of interpreter operates in a loop, where it waits for user input, parses the command (e.g., splitting it into commands and arguments), 
+    and then executes it using system calls like exec. 
+    It also handles basic errors and may support simple features such as input/output redirection and chained commands using operators like ||.
+EXAMPLES
+    ./hsh
+    ($) ls
+    hsh main.c shell.c
+    ($)
+    ($) exit
+
+
+    mariama@goudiaby:/ # echo "/bin/ls" | ./hsh
+                          hsh main.c shell.c test_ls_2
+
+SEE ALSO
+    rm
+    mv
+    mkdir
+    cat
+    ls
+    exit
+    ^C
+
+BUGS
+    List known bugs.
+AUTHOR
+   - Jeremy Sousa <9400@holbertonstudents.com>
+    - Mariama Goudiaby <9390@holbertonstudents.com>
