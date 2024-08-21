@@ -17,7 +17,16 @@ void shell_loop(void)
 		printf("Ready $ ");
 		if (getline(&line, &len, stdin) == -1)
 		{
-			break;
+			if (feof(stdin))
+			{
+				printf("\n");
+				break;
+			}
+			else
+			{
+				perror("getline");
+				exit(EXIT_FAILURE);
+			}
 		}
 		args = parse_command(line);
 		if (args[0])
@@ -25,6 +34,6 @@ void shell_loop(void)
 			handle_command(args);
 		}
 		free(args);
-		}
-		free(line);
+	}
+	free(line);
 }
