@@ -1,14 +1,14 @@
 # ./hsh
 
 ## DESCRIPTION
-A simple shell is a minimalist command interpreter focused on executing essential tasks such as process management and command execution. Its streamlined design makes it ideal for environments where simplicity and efficiency are prioritized.
+*A simple shell is a minimalist command interpreter focused on executing essential tasks such as process management and command execution. Its streamlined design makes it ideal for environments where simplicity and efficiency are prioritized.*
 
 ## INSTALLATION
 git clone https://github.com/dosleam/holbertonschool-simple_shell.git
 
 ## COMPILATION
 To compile this project, use the following command:  
-<p style="color: orange;">**'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'**</p>
+*'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'*
 
 ## REQUIREMENTS
 - Allowed editors: vi, vim, emacs
