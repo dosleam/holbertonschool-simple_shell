@@ -83,7 +83,7 @@ total 64<br>
 -rw-r--r-- 1 root root   557 Aug 22 08:18 shell_loop.c<br>
 Ready ($) exit
 
-echo "/bin/ls" | ./hsh<br>
+mariama@jeremy:/ # echo "/bin/ls" | ./hsh<br>
 AUTHORS    execute_command.c   get_command_path.c  images  main.h   parse_command.c
 README.md  execute_pipeline.c  handle_command.c    main.c  man_1_simple_shell  shell_loop.c
 
