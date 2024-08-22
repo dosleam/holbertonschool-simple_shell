@@ -60,13 +60,28 @@ To compile this project, use the following command:
 - wait4
 - write
 
-## FEATURES
-Supports format specifiers: `%c`, `%s`, `%i`, `%d`
 
 ## EXAMPLES OF USES
-Here are some usage examples:  
-($) ls
-shell.c main.h man_page README.md AUTHORS
+Here are some usage examples:
+
+Ready $ ls
+AUTHORS    execute_command.c   get_command_path.c  hsh     main.h              parse_command.c
+README.md  execute_pipeline.c  handle_command.c    main.c  man_1_simple_shell  shell_loop.c
+Ready $ ls -l
+total 64
+-rw-r--r-- 1 root root   150 Aug 22 07:37 AUTHORS
+-rw-r--r-- 1 root root  1790 Aug 22 12:24 README.md
+-rw-r--r-- 1 root root   970 Aug 22 12:25 execute_command.c
+-rw-r--r-- 1 root root  1604 Aug 22 08:18 execute_pipeline.c
+-rw-r--r-- 1 root root  1504 Aug 22 12:25 get_command_path.c
+-rw-r--r-- 1 root root   629 Aug 22 08:18 handle_command.c
+-rwxr-xr-x 1 root root 17624 Aug 22 12:25 hsh
+-rw-r--r-- 1 root root   305 Aug 22 08:18 main.c
+-rw-r--r-- 1 root root   551 Aug 22 08:19 main.h
+-rw-r--r-- 1 root root   942 Aug 22 08:18 man_1_simple_shell
+-rw-r--r-- 1 root root   641 Aug 22 08:18 parse_command.c
+-rw-r--r-- 1 root root   557 Aug 22 08:18 shell_loop.c
+Ready $ exit
 
 ## TESTING
 To test the implementation. Compile and run it as follows:  
@@ -74,7 +89,7 @@ To test the implementation. Compile and run it as follows:
 `./hsh`
 
 ## FLOWCHART
-![Flowchart]()
+![Flowchart](images/diagramme_simple_shell.png)
 
 ## AUTHORS
 This project was made by Mariama Goudiaby and Jeremy Sousa.

@@ -16,6 +16,11 @@ char *build_path(char *path, char *cmd)
 
 	full_path = malloc(strlen(path) + strlen(cmd) + 2);
 
+	if (full_path == NULL)
+	{
+		return (NULL);
+	}
+
 	if (full_path)
 	{
 		sprintf(full_path, "%s/%s", path, cmd);

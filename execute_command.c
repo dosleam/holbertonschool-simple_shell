@@ -44,7 +44,6 @@ void exec_command(char **args)
 
 	if (command_path)
 	{
-		printf("executing command: %s\n", command_path);
 		execve(command_path, args, environ);
 	}
 	else
