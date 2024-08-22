@@ -14,7 +14,7 @@ void shell_loop(void)
 
 	while (1)
 	{
-		printf("Ready $ ");
+		printf("$ ");
 		if (getline(&line, &len, stdin) == -1)
 		{
 			if (feof(stdin))
