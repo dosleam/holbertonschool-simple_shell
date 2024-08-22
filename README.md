@@ -64,11 +64,11 @@ To compile this project, use the following command:
 ## EXAMPLES OF USES
 Here are some usage examples:
 
-Ready $ ls
+Ready $ ls<br>
 AUTHORS    execute_command.c   get_command_path.c  hsh     main.h              parse_command.c
-README.md  execute_pipeline.c  handle_command.c    main.c  man_1_simple_shell  shell_loop.c
-Ready $ ls -l
-total 64
+README.md  execute_pipeline.c  handle_command.c    main.c  man_1_simple_shell  shell_loop.c<br>
+Ready $ ls -l<br>
+total 64<br>
 -rw-r--r-- 1 root root   150 Aug 22 07:37 AUTHORS
 -rw-r--r-- 1 root root  1790 Aug 22 12:24 README.md
 -rw-r--r-- 1 root root   970 Aug 22 12:25 execute_command.c
@@ -80,7 +80,7 @@ total 64
 -rw-r--r-- 1 root root   551 Aug 22 08:19 main.h
 -rw-r--r-- 1 root root   942 Aug 22 08:18 man_1_simple_shell
 -rw-r--r-- 1 root root   641 Aug 22 08:18 parse_command.c
--rw-r--r-- 1 root root   557 Aug 22 08:18 shell_loop.c
+-rw-r--r-- 1 root root   557 Aug 22 08:18 shell_loop.c<br>
 Ready $ exit
 
 ## TESTING
