@@ -30,10 +30,10 @@ char *build_path(char *path, char *cmd)
 
 /**
  * get_command_path - Trouve le chemin d'une commande
- * @command_name: Nom de la commande Ã  chercher
+ * @command_name: Nom de la commande à chercher
  *
  * Description: Parcourt les chemins definis dans la variable d'environnement
- * PATH pour trouver oÃ¹ se trouve la commande.
+ * PATH pour trouver où se trouve la commande.
  * Return: Le chemin complet vers la commande, ou NULL si introuvable.
  */
 

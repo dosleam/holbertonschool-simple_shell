@@ -83,10 +83,9 @@ total 64<br>
 -rw-r--r-- 1 root root   557 Aug 22 08:18 shell_loop.c<br>
 Ready ($) exit
 
-## TESTING
-To test the implementation. Compile and run it as follows:  
-'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'
-`./hsh`
+echo "/bin/ls" | ./hsh<br>
+AUTHORS    execute_command.c   get_command_path.c  images  main.h   parse_command.c
+README.md  execute_pipeline.c  handle_command.c    main.c  man_1_simple_shell  shell_loop.c
 
 ## FLOWCHART
 ![Flowchart](images/diagramme_simple_shell.png)
